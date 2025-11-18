@@ -82,11 +82,12 @@ body {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  background: var(--glass);
+  background: linear-gradient(135deg, rgba(36, 72, 210, 0.28), rgba(0, 0, 0, 0.18));
   border: 1px solid var(--stroke);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  padding: 14px 16px;
+  padding: 16px 18px;
+  margin-top: 32px;
   backdrop-filter: blur(8px);
 }
 .meta-item { display: grid; gap: 4px; text-align: center; }

@@ -88,9 +88,9 @@ document.querySelector('#app').innerHTML = `
 
     <main class="wrap">
       <header id="home" class="hero hero-shell">
-        <h1 class="hero-title hero-title-lg">You handle the team. AI handles the leads.</h1>
+        <h1 class="hero-title hero-title-lg">Growth-Ready Teams</h1>
         <p class="hero-muted hero-sub">
-          Managing teams and converting leads becomes effortless when AI handles the tracking.
+          You handle the team. AI handles the leads.
         </p>
       </header>
 

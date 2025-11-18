@@ -88,14 +88,10 @@ document.querySelector('#app').innerHTML = `
 
     <main class="wrap">
       <header id="home" class="hero hero-shell">
-        <span class="pill">New design initiative</span>
-        <h1 class="hero-title hero-title-lg">Profico Academy</h1>
+        <h1 class="hero-title hero-title-lg">You handle the team. AI handles the leads.</h1>
         <p class="hero-muted hero-sub">
-          Spin up projects, capture voice notes, and dispatch tasks directly from Telegram. Register on the web to secure your workspace, then launch the mini app with one tap.
+          Managing teams and converting leads becomes effortless when AI handles the tracking.
         </p>
-        <div class="hero-actions">
-          <button class="btn">Apply now</button>
-        </div>
       </header>
 
       <div class="meta-bar">

@@ -18,6 +18,43 @@ const faqItems = [
   }
 ]
 
+const featureCards = [
+  {
+    title: 'Hands-on learning',
+    copy: 'Gradient blues, crisp strokes, and soft shadows mirror the mini app UI while keeping things tactile.'
+  },
+  {
+    title: 'Mentorship by our experts',
+    copy: 'Reusable cards, tiles, accordions, and chips help you frame your story alongside guided feedback.'
+  },
+  {
+    title: 'Widely applicable skills',
+    copy: 'Adaptive layouts that scale from mobile onboarding to desktop preview keep your practice relevant.'
+  },
+  {
+    title: 'Street cred studies',
+    copy: 'Guided registration and safe handoffs turn into polished portfolio pieces without losing security.'
+  }
+]
+
+const courseItems = [
+  {
+    title: 'Motion Design basics',
+    meta: 'Learning component',
+    description: 'Learn product animation with realistic tasks and guided practice inside a glassy shell.'
+  },
+  {
+    title: 'Design Trends',
+    meta: 'Learning component',
+    description: 'Explore trend-aware layouts while keeping the structure and gradients you already love.'
+  },
+  {
+    title: 'UI/UX',
+    meta: 'User Interface & Experience',
+    description: 'Interface design and ease of use working together to carry your product to the next level.'
+  }
+]
+
 const renderFAQ = () =>
   faqItems
     .map(
@@ -34,156 +71,158 @@ const renderFAQ = () =>
     .join('')
 
 document.querySelector('#app').innerHTML = `
-  <main class="wrap">
-    <header class="hero">
-      <span class="pill">Telegram Mini App</span>
-      <h1 class="hero-title">
-        The fastest way to ship ideas in chat
-        <span class="gradient-text">— now with a landing page</span>
-      </h1>
-      <p class="hero-muted">
-        Spin up projects, capture voice notes, and dispatch tasks directly from Telegram. Register on the web to secure your workspace, then launch the mini app with one tap.
-      </p>
-      <div class="hero-actions">
-        <button class="btn">Register for early access</button>
-        <button class="btn secondary">View product overview</button>
+  <div class="page-shell">
+    <nav class="top-nav">
+      <div class="brand">Profico.</div>
+      <div class="nav-links">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#courses">Courses</a>
+        <a class="nav-link" href="#process">Process</a>
+        <a class="nav-link" href="#faq">FAQ</a>
       </div>
-    </header>
+      <div class="nav-actions">
+        <button class="btn secondary mini">Apply now</button>
+        <button class="btn mini">Apply now</button>
+      </div>
+    </nav>
 
-    <section class="section">
-      <div class="three-grid">
-        <div class="tile">
-          <div>
-            <h2>Glassmorphism shell</h2>
-            <p>Gradient blues, crisp strokes, and soft shadows mirror the mini app UI.</p>
-          </div>
+    <main class="wrap">
+      <header id="home" class="hero hero-shell">
+        <span class="pill">New design initiative</span>
+        <h1 class="hero-title hero-title-lg">Profico Academy</h1>
+        <p class="hero-muted hero-sub">
+          Spin up projects, capture voice notes, and dispatch tasks directly from Telegram. Register on the web to secure your workspace, then launch the mini app with one tap.
+        </p>
+        <div class="hero-actions">
+          <button class="btn">Apply now</button>
         </div>
-        <div class="tile">
-          <div>
-            <h2>Actionable cards</h2>
-            <p>Reusable cards, tiles, accordions, and chips to frame your story.</p>
-          </div>
-        </div>
-        <div class="tile">
-          <div>
-            <h2>Responsive grid</h2>
-            <p>Adaptive layout that scales from mobile onboarding to desktop preview.</p>
-          </div>
-        </div>
-        <div class="tile">
-          <div>
-            <h2>Safe onboarding</h2>
-            <p>Guided registration that hands off to Telegram via secure deep links.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </header>
 
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <h3>Product overview</h3>
-          <span class="hint">Built to reflect the in-app experience</span>
+      <div class="meta-bar">
+        <div class="meta-item">
+          <span class="meta-label">Skill boosters</span>
+          <span class="meta-value">Light / Experts</span>
         </div>
-        <p class="section-subtitle">Use this page as your public front door while preserving the look and feel of your Telegram mini app.</p>
-        <ul class="list">
-          <li><strong>AI-first intake</strong> — capture voice notes and convert them into tasks automatically.</li>
-          <li><strong>Team-ready</strong> — invite teammates via Telegram and keep updates flowing inside chat.</li>
-          <li><strong>Secure handoff</strong> — registration collects only what you need before redirecting to the bot.</li>
-        </ul>
-        <div class="stats">
-          <div class="stat"><h4>Avg. response</h4><div class="value">12s</div></div>
-          <div class="stat"><h4>Tasks created</h4><div class="value">+340%</div></div>
-          <div class="stat"><h4>Sync uptime</h4><div class="value">99.9%</div></div>
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">8 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Assignment</span>
+          <span class="meta-value">8</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Total place</span>
+          <span class="meta-value">13</span>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <h3>How it works</h3>
-          <span class="hint">From web sign-up to Telegram launch</span>
+      <section id="courses" class="section section-centered">
+        <div class="section-heading">
+          <span class="pill pill-soft">Study program</span>
+          <h2 class="section-title section-title-lg">What's in it for you?</h2>
+          <p class="section-subtitle section-sub-center">Gain all the skills you need to kick start your professional industrial design journey without changing the look you already have.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <h4>Create your workspace</h4>
-            <p>Share your email and the Telegram handle you want to pair.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <h4>Confirm ownership</h4>
-            <p>Check your inbox for a confirmation and a secure deep link.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <h4>Launch the mini app</h4>
-            <p>Tap the link to open Telegram and start working inside chat.</p>
-          </div>
+        <div class="feature-grid">
+          ${featureCards
+            .map(
+              (card, idx) => `
+                <article class="feature-card">
+                  <div class="feature-num">0${idx + 1}</div>
+                  <h3>${card.title}</h3>
+                  <p>${card.copy}</p>
+                </article>
+              `
+            )
+            .join('')}
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <h3>Register your workspace</h3>
-          <span class="hint">We only collect what the mini app needs</span>
+      <section id="process" class="section courses">
+        <div class="section-heading align-start">
+          <span class="pill pill-soft">Process</span>
+          <h3 class="section-title">Courses</h3>
         </div>
-        <form>
-          <div>
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" placeholder="Olivia Carter" />
-          </div>
-          <div>
-            <label for="email">Work email</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" />
-          </div>
-          <div>
-            <label for="handle">Telegram handle</label>
-            <input id="handle" name="handle" type="text" placeholder="@username" />
-          </div>
-          <div>
-            <label for="team-size">Team size</label>
-            <select id="team-size" name="team-size">
-              <option>Just me</option>
-              <option>2–10 teammates</option>
-              <option>11–25 teammates</option>
-              <option>25+ teammates</option>
-            </select>
-          </div>
-          <button class="btn" type="button">Submit &amp; get link</button>
-        </form>
-      </div>
-    </section>
+        <div class="course-grid">
+          <article class="course-card highlight">
+            <div class="course-meta">Duration</div>
+            <div class="course-value">8 weeks</div>
+            <p class="course-description">Work through realistic builds, from product animation to messaging-ready visuals, with the same gradients and cards.</p>
+          </article>
+          ${courseItems
+            .map(
+              (course) => `
+                <article class="course-card">
+                  <div class="course-meta">${course.meta}</div>
+                  <h4>${course.title}</h4>
+                  <p class="course-description">${course.description}</p>
+                </article>
+              `
+            )
+            .join('')}
+        </div>
+      </section>
 
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <h3>What you get</h3>
-          <span class="hint">Aligned with the mini app toolkit</span>
+      <section class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Register your workspace</h3>
+            <span class="hint">We only collect what the mini app needs</span>
+          </div>
+          <form>
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Olivia Carter" />
+            </div>
+            <div>
+              <label for="email">Work email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" />
+            </div>
+            <div>
+              <label for="handle">Telegram handle</label>
+              <input id="handle" name="handle" type="text" placeholder="@username" />
+            </div>
+            <div>
+              <label for="team-size">Team size</label>
+              <select id="team-size" name="team-size">
+                <option>Just me</option>
+                <option>2–10 teammates</option>
+                <option>11–25 teammates</option>
+                <option>25+ teammates</option>
+              </select>
+            </div>
+            <button class="btn" type="button">Submit &amp; get link</button>
+          </form>
         </div>
-        <div class="badge-list">
-          <span class="chip">Glass cards</span>
-          <span class="chip">Hero tiles</span>
-          <span class="chip">Responsive grid</span>
-          <span class="chip">CTA buttons</span>
-          <span class="chip">Accordions</span>
-          <span class="chip">Chips &amp; pills</span>
-        </div>
-        <div class="acc" id="faq">${renderFAQ()}</div>
-      </div>
-    </section>
+      </section>
 
-    <div class="footer-cta">
-      <p>Ready to see it live? Open the mini app and keep building inside Telegram.</p>
-      <div class="hero-actions">
-        <button class="btn">Start in Telegram</button>
-        <button class="btn secondary">Download overview</button>
+      <section class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>What you get</h3>
+            <span class="hint">Aligned with the mini app toolkit</span>
+          </div>
+          <div class="badge-list">
+            <span class="chip">Glass cards</span>
+            <span class="chip">Hero tiles</span>
+            <span class="chip">Responsive grid</span>
+            <span class="chip">CTA buttons</span>
+            <span class="chip">Accordions</span>
+            <span class="chip">Chips &amp; pills</span>
+          </div>
+          <div class="acc" id="faq">${renderFAQ()}</div>
+        </div>
+      </section>
+
+      <div class="footer-cta">
+        <p>Ready to see it live? Open the mini app and keep building inside Telegram.</p>
+        <div class="hero-actions">
+          <button class="btn">Start in Telegram</button>
+          <button class="btn secondary">Download overview</button>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 `
 
 const faq = document.querySelector('#faq')

@@ -76,46 +76,33 @@ document.querySelector('#app').innerHTML = `
       <div class="brand">Profico.</div>
       <div class="nav-links">
         <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#courses">Courses</a>
-        <a class="nav-link" href="#process">Process</a>
-        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="#courses">Features</a>
+        <a class="nav-link" href="#process">Pricing</a>
+        <a class="nav-link" href="#faq">FAQs</a>
       </div>
       <div class="nav-actions">
-        <button class="btn secondary mini">Apply now</button>
-        <button class="btn mini">Apply now</button>
+        <button class="btn nav-apply">Apply now</button>
       </div>
     </nav>
 
     <main class="wrap">
       <header id="home" class="hero hero-shell">
         <h1 class="hero-title hero-title-lg">Growth-Ready Teams</h1>
-        <p class="hero-muted hero-sub">
+        <p class="hero-muted hero-sub hero-sub-strong">
           You handle the team. AI handles the leads.
         </p>
       </header>
 
       <div class="meta-bar">
-        <div class="meta-item">
-          <span class="meta-label">Skill boosters</span>
-          <span class="meta-value">Light / Experts</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Duration</span>
-          <span class="meta-value">8 weeks</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Assignment</span>
-          <span class="meta-value">8</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Total place</span>
-          <span class="meta-value">13</span>
-        </div>
+        <div class="meta-item meta-single">All chats organized instantly</div>
+        <div class="meta-item meta-single">Instant context for decisions</div>
+        <div class="meta-item meta-single">One screen. Total control.</div>
+        <div class="meta-item meta-single">AI surfaces key leads.</div>
+        <div class="meta-item meta-single">AI surfaces key leads.</div>
       </div>
 
       <section id="courses" class="section section-centered">
         <div class="section-heading">
-          <span class="pill pill-soft">Study program</span>
           <h2 class="section-title section-title-lg">What's in it for you?</h2>
           <p class="section-subtitle section-sub-center">Gain all the skills you need to kick start your professional industrial design journey without changing the look you already have.</p>
         </div>

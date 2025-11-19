@@ -44,10 +44,11 @@ const renderFAQ = () =>
 document.querySelector('#app').innerHTML = `
   <div class="page-shell">
     <nav class="top-nav">
-      <div class="brand">Profico.</div>
+      <div class="brand">VALL-E MiniApp</div>
       <div class="nav-links">
         <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#courses">Features</a>
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
         <a class="nav-link" href="#faq">FAQs</a>
       </div>
       <div class="nav-actions">
@@ -63,11 +64,7 @@ document.querySelector('#app').innerHTML = `
         </p>
       </header>
 
-      <section id="courses" class="section section-centered">
-        <div class="section-heading">
-          <h2 class="section-title section-title-lg">What's in it for you?</h2>
-          <p class="section-subtitle section-sub-center">Gain all the skills you need to kick start your professional industrial design journey without changing the look you already have.</p>
-        </div>
+      <section id="features" class="section section-centered">
         <div class="highlight-grid">
           ${keyHighlights
             .map((highlight) => `
@@ -77,7 +74,7 @@ document.querySelector('#app').innerHTML = `
         </div>
       </section>
 
-      <section class="section">
+      <section id="pricing" class="section">
         <div class="card">
           <div class="card-header">
             <h3>Register your workspace</h3>

@@ -23,7 +23,7 @@ const keyHighlights = [
   'Instant context for decisions',
   'One screen. Total control.',
   'AI surfaces key leads.',
-  'AI surfaces key leads.'
+  'Effortless team coordination'
 ]
 
 const renderFAQ = () =>
@@ -76,8 +76,6 @@ document.querySelector('#app').innerHTML = `
 
       <section id="scroll-video-section">
         <div class="video-shell">
-          <h3>See the flow as you scroll</h3>
-          <p class="video-subtitle">Scrub through the workspace walkthrough just by moving down the page.</p>
           <video id="scrollVideo" src="/video/no-background-open.mp4" preload="auto" playsinline muted></video>
         </div>
       </section>
@@ -172,16 +170,24 @@ if (video && videoSection) {
     const duration = video.duration
     let targetTime = 0
     let currentTime = 0
+    let lastScrollY = window.scrollY
 
     const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
 
     const updateTargetTime = () => {
       const rect = videoSection.getBoundingClientRect()
-      const viewportHeight = window.innerHeight
-      const totalDistance = rect.height + viewportHeight
-      const distanceCovered = viewportHeight - rect.top
-      const progress = clamp(distanceCovered / totalDistance, 0, 1)
-      targetTime = progress * duration
+      const inView = rect.bottom > 0 && rect.top < window.innerHeight
+      const scrollY = window.scrollY
+
+      if (!inView) {
+        lastScrollY = scrollY
+        return
+      }
+
+      const delta = scrollY - lastScrollY
+      lastScrollY = scrollY
+      const progressDelta = delta / (window.innerHeight || 1)
+      targetTime = clamp(targetTime + progressDelta * duration, 0, duration)
     }
 
     const render = () => {

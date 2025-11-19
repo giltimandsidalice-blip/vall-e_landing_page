@@ -18,41 +18,12 @@ const faqItems = [
   }
 ]
 
-const featureCards = [
-  {
-    title: 'Hands-on learning',
-    copy: 'Gradient blues, crisp strokes, and soft shadows mirror the mini app UI while keeping things tactile.'
-  },
-  {
-    title: 'Mentorship by our experts',
-    copy: 'Reusable cards, tiles, accordions, and chips help you frame your story alongside guided feedback.'
-  },
-  {
-    title: 'Widely applicable skills',
-    copy: 'Adaptive layouts that scale from mobile onboarding to desktop preview keep your practice relevant.'
-  },
-  {
-    title: 'Street cred studies',
-    copy: 'Guided registration and safe handoffs turn into polished portfolio pieces without losing security.'
-  }
-]
-
-const courseItems = [
-  {
-    title: 'Motion Design basics',
-    meta: 'Learning component',
-    description: 'Learn product animation with realistic tasks and guided practice inside a glassy shell.'
-  },
-  {
-    title: 'Design Trends',
-    meta: 'Learning component',
-    description: 'Explore trend-aware layouts while keeping the structure and gradients you already love.'
-  },
-  {
-    title: 'UI/UX',
-    meta: 'User Interface & Experience',
-    description: 'Interface design and ease of use working together to carry your product to the next level.'
-  }
+const keyHighlights = [
+  'All chats organized instantly',
+  'Instant context for decisions',
+  'One screen. Total control.',
+  'AI surfaces key leads.',
+  'AI surfaces key leads.'
 ]
 
 const renderFAQ = () =>
@@ -77,7 +48,6 @@ document.querySelector('#app').innerHTML = `
       <div class="nav-links">
         <a class="nav-link" href="#home">Home</a>
         <a class="nav-link" href="#courses">Features</a>
-        <a class="nav-link" href="#process">Pricing</a>
         <a class="nav-link" href="#faq">FAQs</a>
       </div>
       <div class="nav-actions">
@@ -93,55 +63,16 @@ document.querySelector('#app').innerHTML = `
         </p>
       </header>
 
-      <div class="meta-bar">
-        <div class="meta-item meta-single">All chats organized instantly</div>
-        <div class="meta-item meta-single">Instant context for decisions</div>
-        <div class="meta-item meta-single">One screen. Total control.</div>
-        <div class="meta-item meta-single">AI surfaces key leads.</div>
-        <div class="meta-item meta-single">AI surfaces key leads.</div>
-      </div>
-
       <section id="courses" class="section section-centered">
         <div class="section-heading">
           <h2 class="section-title section-title-lg">What's in it for you?</h2>
           <p class="section-subtitle section-sub-center">Gain all the skills you need to kick start your professional industrial design journey without changing the look you already have.</p>
         </div>
-        <div class="feature-grid">
-          ${featureCards
-            .map(
-              (card, idx) => `
-                <article class="feature-card">
-                  <div class="feature-num">0${idx + 1}</div>
-                  <h3>${card.title}</h3>
-                  <p>${card.copy}</p>
-                </article>
-              `
-            )
-            .join('')}
-        </div>
-      </section>
-
-      <section id="process" class="section courses">
-        <div class="section-heading align-start">
-          <span class="pill pill-soft">Process</span>
-          <h3 class="section-title">Courses</h3>
-        </div>
-        <div class="course-grid">
-          <article class="course-card highlight">
-            <div class="course-meta">Duration</div>
-            <div class="course-value">8 weeks</div>
-            <p class="course-description">Work through realistic builds, from product animation to messaging-ready visuals, with the same gradients and cards.</p>
-          </article>
-          ${courseItems
-            .map(
-              (course) => `
-                <article class="course-card">
-                  <div class="course-meta">${course.meta}</div>
-                  <h4>${course.title}</h4>
-                  <p class="course-description">${course.description}</p>
-                </article>
-              `
-            )
+        <div class="highlight-grid">
+          ${keyHighlights
+            .map((highlight) => `
+              <div class="highlight-box">${highlight}</div>
+            `)
             .join('')}
         </div>
       </section>

@@ -91,7 +91,7 @@ body {
 
 .highlight-box {
   font-weight: 800;
-  font-size: 12px;
+  font-size: calc(12px * 2.5);
   line-height: 1.3;
   color: var(--text);
   border: 1px solid var(--stroke);
@@ -155,6 +155,11 @@ body {
   border-radius: 12px;
   border: 1px solid var(--stroke);
   box-shadow: var(--shadow);
+  background-color: transparent;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 

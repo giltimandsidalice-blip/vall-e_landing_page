@@ -20,6 +20,7 @@
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -104,6 +105,58 @@ body {
   justify-content: center;
   text-align: center;
 }
+
+.benefits { margin: 36px 0 10px; }
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.benefit-box {
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+.benefit-box h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.benefit-box p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#scroll-video-section {
+  padding: 80px 0;
+  text-align: center;
+}
+.video-shell {
+  max-width: 780px;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+}
+.video-shell h3 {
+  margin: 0;
+  font-size: 24px;
+}
+.video-subtitle {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+#scrollVideo {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+
 
 /* Tiles & cards */
 .tile {

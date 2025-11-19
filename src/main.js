@@ -74,31 +74,6 @@ document.querySelector('#app').innerHTML = `
         </div>
       </section>
 
-      <section class="benefits" aria-label="Key benefits">
-        <div class="benefit-grid">
-          <article class="benefit-box">
-            <h3>Inbox clarity</h3>
-            <p>Turn messy threads into clean tracks so everyone knows the next move.</p>
-          </article>
-          <article class="benefit-box">
-            <h3>Faster handoffs</h3>
-            <p>Summaries travel with every chat, so teammates pick up without lag.</p>
-          </article>
-          <article class="benefit-box">
-            <h3>Always-on memory</h3>
-            <p>Let AI recall context, owners, and blockers while you stay in motion.</p>
-          </article>
-          <article class="benefit-box">
-            <h3>Workflow ready</h3>
-            <p>Integrate approvals, reviews, and revives without leaving Telegram.</p>
-          </article>
-          <article class="benefit-box">
-            <h3>Signal over noise</h3>
-            <p>Highlight the accounts that are heating up before the team even asks.</p>
-          </article>
-        </div>
-      </section>
-
       <section id="scroll-video-section">
         <div class="video-shell">
           <h3>See the flow as you scroll</h3>
@@ -190,17 +165,33 @@ faq?.addEventListener('click', (event) => {
 })
 
 const video = document.getElementById('scrollVideo')
+const videoSection = document.getElementById('scroll-video-section')
 
-video?.addEventListener('loadedmetadata', () => {
-  const duration = video.duration
+if (video && videoSection) {
+  video.addEventListener('loadedmetadata', () => {
+    const duration = video.duration
+    let targetTime = 0
+    let currentTime = 0
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY
-    const maxScroll = document.body.scrollHeight - window.innerHeight
-    const scrollFraction = maxScroll > 0 ? scrollTop / maxScroll : 0
-    video.currentTime = scrollFraction * duration
-  }
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
 
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  handleScroll()
-})
+    const updateTargetTime = () => {
+      const rect = videoSection.getBoundingClientRect()
+      const viewportHeight = window.innerHeight
+      const totalDistance = rect.height + viewportHeight
+      const distanceCovered = viewportHeight - rect.top
+      const progress = clamp(distanceCovered / totalDistance, 0, 1)
+      targetTime = progress * duration
+    }
+
+    const render = () => {
+      currentTime += (targetTime - currentTime) * 0.12
+      video.currentTime = currentTime
+      requestAnimationFrame(render)
+    }
+
+    window.addEventListener('scroll', updateTargetTime, { passive: true })
+    updateTargetTime()
+    render()
+  })
+}

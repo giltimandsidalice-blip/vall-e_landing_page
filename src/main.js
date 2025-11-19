@@ -74,7 +74,40 @@ document.querySelector('#app').innerHTML = `
         </div>
       </section>
 
-      <section id="pricing" class="section">
+      <section class="benefits" aria-label="Key benefits">
+        <div class="benefit-grid">
+          <article class="benefit-box">
+            <h3>Inbox clarity</h3>
+            <p>Turn messy threads into clean tracks so everyone knows the next move.</p>
+          </article>
+          <article class="benefit-box">
+            <h3>Faster handoffs</h3>
+            <p>Summaries travel with every chat, so teammates pick up without lag.</p>
+          </article>
+          <article class="benefit-box">
+            <h3>Always-on memory</h3>
+            <p>Let AI recall context, owners, and blockers while you stay in motion.</p>
+          </article>
+          <article class="benefit-box">
+            <h3>Workflow ready</h3>
+            <p>Integrate approvals, reviews, and revives without leaving Telegram.</p>
+          </article>
+          <article class="benefit-box">
+            <h3>Signal over noise</h3>
+            <p>Highlight the accounts that are heating up before the team even asks.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="scroll-video-section">
+        <div class="video-shell">
+          <h3>See the flow as you scroll</h3>
+          <p class="video-subtitle">Scrub through the workspace walkthrough just by moving down the page.</p>
+          <video id="scrollVideo" src="/video/no-background-open.mp4" preload="auto" playsinline muted></video>
+        </div>
+      </section>
+
+      <section id="pricing" class="section registration">
         <div class="card">
           <div class="card-header">
             <h3>Register your workspace</h3>
@@ -154,4 +187,20 @@ faq?.addEventListener('click', (event) => {
     item.classList.add('open')
     head.querySelector('span').textContent = '−'
   }
+})
+
+const video = document.getElementById('scrollVideo')
+
+video?.addEventListener('loadedmetadata', () => {
+  const duration = video.duration
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY
+    const maxScroll = document.body.scrollHeight - window.innerHeight
+    const scrollFraction = maxScroll > 0 ? scrollTop / maxScroll : 0
+    video.currentTime = scrollFraction * duration
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  handleScroll()
 })

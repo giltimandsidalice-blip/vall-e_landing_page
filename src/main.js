@@ -58,10 +58,22 @@ document.querySelector('#app').innerHTML = `
 
     <main class="wrap">
       <header id="home" class="hero hero-shell">
-        <h1 class="hero-title hero-title-lg">Growth-Ready Teams</h1>
-        <p class="hero-muted hero-sub hero-sub-strong">
-          You handle the team. AI handles the leads.
-        </p>
+        <div class="hero-visual" aria-hidden="true">
+          <video
+            class="hero-video"
+            src="/video/circle.mov"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video>
+        </div>
+        <div class="hero-content">
+          <h1 class="hero-title hero-title-lg">Growth-Ready Teams</h1>
+          <p class="hero-muted hero-sub hero-sub-strong">
+            You handle the team. AI handles the leads.
+          </p>
+        </div>
       </header>
 
       <section id="features" class="section section-centered">

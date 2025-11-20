@@ -84,9 +84,9 @@ body {
   padding-bottom: clamp(30px, 8vh, 90px); 
 }
 .hero-video {
-  width: clamp(840px, 140vw, 1760px);
+  width: clamp(720px, 100vw, 1240px);
   height: auto;
-  max-height: 140vh; 
+  max-height: 100vh; 
   border: none; 
   outline: none; 
   background: transparent; 
